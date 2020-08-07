@@ -19,10 +19,14 @@ print('Original List: ', class_map)
 def invert_dict(d):
     inverse = dict()
     for key in d:
+        #  run through the list that is saved in the dictionary
         for item in d[key]:
+            #  check if the key already exists in the inverted dictionary
             if item not in inverse:
+                #  if key in inverted dictionary does not already exist, create it
                 inverse[item] = [key]
             else:
+                #  if key does exist, append the item to it
                 inverse[item].append(key)
     return inverse
 
