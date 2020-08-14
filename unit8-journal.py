@@ -4,7 +4,7 @@ class_map = {'Core': ['ASR9K', 'NCS5501', 'NCS540'], 'Aggregate': ['ASR920', 'NC
              'Distribution': ['ASR920', 'C9500', 'C3850', 'C4948'], 'Server': ['UCS', 'PowerEdge'], 'CPE': ['Modem', 'NIDGT'], 'VoIP': ['TG862', 'ME34xx']}
 
 '''
-#  write database to pickle file
+#  write database to pickle file for later import
 unit8_input = open('unit8-input.pkl', 'wb')
 pickle.dump(class_map, unit8_input)
 unit8_input.close()  # must close before read or run out of input
@@ -32,7 +32,8 @@ def invert_dict(d):
 
 inverse_class_map = invert_dict(read_class_map)
 #  scaffolding print for troubleshooting
-print('Inverted: ', inverse_class_map)
+#  print('Inverted: ', inverse_class_map)
+#  the following saves the inverted dictionary to an output pickle file
 unit8_output = open('unit8-output.pkl', 'wb')
 pickle.dump(inverse_class_map, unit8_output)
 unit8_output.close()
